@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{   
+    int n,m,i;
+    ll x,y;
+	priority_queue <ll ,vector<ll>,greater<ll> > pq;
+	cin>>n>>m;
+	i=m;
+	while(m--)
+	{
+		cin>>x;
+		pq.push(x);
+	}
+	while((i-n)>0)
+	{
+		x=pq.top();
+		pq.pop();
+		y=pq.top();
+		pq.pop();
+		pq.push(x+y);
+		i--;
+	}
+	cout<<pq.top();
+	
+}

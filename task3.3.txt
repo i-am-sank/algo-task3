@@ -1,0 +1,36 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+bool isprime(int k)
+{   int cnt=0,i;
+	for( i=2;i<=pow(k,0.5);i++)
+	{
+		if(k%i==0)
+		{
+		 cnt++;
+		 break;
+		}
+	}
+	if(cnt==1)
+	return false;
+	else
+	return true;
+}
+int main()
+{
+   int n,i,count=2;
+   
+   cin>>n;
+   for(i=4;i<=n;i++)
+   {  
+     if(isprime(i))
+   	 count++;
+   	 
+   	 else 
+   	 continue; 
+   }
+   if(n==2)
+   cout<<"1";
+   else
+   cout<<count*(count+1)/2;	
+}
